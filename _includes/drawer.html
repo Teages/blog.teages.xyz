@@ -1,0 +1,23 @@
+<div class="mdui-drawer mdui-shadow-4" id="main-drawer">
+    <div class="mdui-center site-drawer">
+        <div>
+            <div class="site-info mdui-text-center">
+                {% if site.avatar %}
+                <a href="/" class="site-avatar">
+                    <img class="mdui-img-fluid mdui-center" src="/assets/{{ site.avatar }}">
+                </a>
+                {% endif %}
+
+                {% if site.author %}
+                <h1 class="site-name"><a href="/">{{ site.author }}</a></h1>
+                {% endif %}
+                {% if site.subtitle %}
+                <p class="site-description">{{ site.subtitle }}</h1>
+                    {% elsif site.title %}
+                <p class="site-description">{{ site.title }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {%- include footer.html -%}
+</div>

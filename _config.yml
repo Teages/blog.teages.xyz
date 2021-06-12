@@ -1,0 +1,100 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Teages's Blog
+author: Teages
+# subtitle: Teages's Blog
+email: your-email@example.com
+icon: Teages.ico
+avatar: Teages.ico
+description: >- # this means to ignore newlines until "baseurl:"
+  Teages的个人博客
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+footer_text: Copyright © 2018-2020
+
+footer_links: 
+  weibo: #请输入你的微博个性域名 https://www.weibo.com/<thispart>
+  behance: # https://www.behance.net/<>
+  dribbble: # https://dribbble.com/<>
+  email: Teages@teages.xyz 
+  facebook: #https://www.facebook.com/<>
+  flickr: #https://www.flickr.com/<>
+  github: Teages #https://github.com/<>
+  instagram: #https://instagram.com/<>
+  linkedin: #https://www.linkedin.com/in/<>
+  pinterest: #https://www.pinterest.com/<>
+  rss: Teages #随便填点啥RSS就能用了
+  stackoverflow: # http://stackoverflow.com/<>
+  tumblr: # https://<username>.tumblr.com
+  twitter: Teages_L # https://www.twitter.com/<your_twitter_username> 
+  youtube: # channel/<your_long_string> or user/<user-name>
+  bilibili: 37429890 # https://space.bilibili.com/<user-uid>
+
+  
+# 输入Gitalk相关设定，即可添加评论区
+gitalk:
+  clientID: 1af62824c8d0c129d52e
+  clientSecret: ad0c76ff05b3d69c17dd0631c63f36427a22989f
+  repo: teages.github.io
+  owner: Teages
+
+# 输入Google Analytics web tracking code
+google_analytics: UA-137561154-1
+  
+#特殊设置
+grey_all: false  # 全站变灰
+lang: zh_CN
+
+# Build settings
+permalink: /pages/:title.html
+paginate_path: /page:num/
+excerpt_separator: <!-- more -->
+
+# theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:   # Rouge Options › https\://github.com/jneen/rouge#full-options
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+
+# Use the following plug-ins
+plugins:
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+
+# Exclude these files from your production _site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
+

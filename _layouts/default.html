@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-layout mdui-theme-primary-blue-grey mdui-theme-accent-indigo">
+
+    {%- include header.html -%}
+    {%- include drawer.html -%}
+
+    <main class="mdui-container doc-container" aria-label="Content">
+        {{ content }}
+    </main>
+    
+    <!-- MDUI JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+      integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+      crossorigin="anonymous"
+    ></script>
+    {% include analytics.html %}
+    <script>
+      var $=mdui.$;
+      $(".mdui-typo table").addClass("mdui-table");
+    </script>
+  </body>
+
+</html>

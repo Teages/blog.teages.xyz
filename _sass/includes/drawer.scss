@@ -1,0 +1,31 @@
+.site-drawer {
+    padding-top: 3rem;
+    width: 80%;
+
+    .site-info {
+        .site-avatar img {
+            width: 80%;
+        }
+
+        .site-name a {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.mdui-theme-layout-dark {
+    .site-drawer {
+        .site-info {
+            .site-name a {
+                color: #fff;
+            }
+        }
+    }
+
+    .svg-icon svg {
+        fill: white !important;
+
+    }
+}

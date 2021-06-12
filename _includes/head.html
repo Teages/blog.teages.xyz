@@ -1,0 +1,16 @@
+<head>
+  {% include meta.html %}
+  {% seo %}
+  {% if site.avatar %}
+  <link rel="icon" type="image/x-icon" href="/assets/{{ site.avatar }}" />
+  {% endif %}
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+
+
+  {% include gray.html %}
+  <!-- MDUI CSS -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+    integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous" /> -->
+  <script src="/assets/js/toc.js"></script>
+</head>

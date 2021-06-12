@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+.doc-container {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    position: relative;
+    max-width: 800px !important;
+
+    @media (min-width: 480px) {
+        padding-top: 60px;
+
+    }
+
+    @media (min-width: 840px) {
+        padding-top: 80px;
+
+    }
+}
+
+body {
+    border-left: 1px solid rgba(0, 0, 0, .12);
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.posts-card {
+    margin: 20px 0;
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+}
+
+.mdui-theme-layout-dark {
+
+    a {
+        color: white;
+    }
+
+    .posts-card {
+        a {
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.tag-with-count {
+    .name {
+        padding-right: 3px;
+    }
+
+    .count {
+        color: #fff;
+        background-color: #000;
+        opacity: 40%;
+        border-radius: 0 16px 16px 0;
+    }
+}
+
+.mdui-theme-layout-dark {
+    .tag-with-count {
+        .count {
+            color: #000;
+            background-color: #fff;
+        }
+    }
+}

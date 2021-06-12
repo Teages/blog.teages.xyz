@@ -1,0 +1,28 @@
+.doc-container {
+    padding-top: 3rem
+}
+
+.main-title {
+    border-bottom: 1px solid rgba(0,0,0,.12);
+}
+
+.article-container {
+    padding-top: 1.5rem;
+}
+
+.article-footer {
+    margin-top: 12px;
+    border-top: 1px solid rgba(0,0,0,.12);
+}
+
+.article-anchor {
+   padding-top:50px;
+   margin-top:-50px;
+}
+
+// td, th {
+//     padding: .25rem .5rem;
+//     border: 1px solid #e9ecef;
+// }
+
+@import url(https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css);
