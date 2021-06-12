@@ -38,7 +38,7 @@ footer_links:
 gitalk:
   clientID: 1af62824c8d0c129d52e
   clientSecret: ad0c76ff05b3d69c17dd0631c63f36427a22989f
-  repo: teages.github.io
+  repo: blog.teages.xyz
   owner: Teages
 
 # 输入Google Analytics web tracking code
