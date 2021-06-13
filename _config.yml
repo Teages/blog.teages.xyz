@@ -49,7 +49,7 @@ grey_all: false  # 全站变灰
 lang: zh_CN
 
 # Build settings
-permalink: /pages/:title.html
+permalink: /pages/:title
 paginate_path: /page:num/
 excerpt_separator: <!-- more -->
 
