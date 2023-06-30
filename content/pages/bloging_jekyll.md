@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 博客构建指南 - 从建站到寻求收录
 date: 2020-03-29
 Author: Teages

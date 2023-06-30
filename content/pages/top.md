@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 浏览指引
 date: 2020-01-01
 Author: Teages

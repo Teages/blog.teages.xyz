@@ -1,5 +1,4 @@
 ---
-layout: post
 title: PCtyx入门指南
 date: 2020-03-08
 Author: Teages

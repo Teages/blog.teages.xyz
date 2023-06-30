@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 手把手教你Cytoid制谱
 date: 2020-02-11
 Author: Teages

@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  更新了
 date:   2021-06-10 08:57:14 +0800
 categories: jekyll update
