@@ -1,4 +1,3 @@
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
@@ -7,24 +6,25 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
   ],
 
-  tailwindcss: {
+  tailwindcss:{
     config: {
+      darkMode: 'class',
       plugins: [
-        require('@tailwindcss/typography')({
-          skip: ['pre']
-        }),
+        require('@tailwindcss/typography'),
         require("daisyui"),
       ],
+      daisyui: {
+        themes: ["light", "dark", "cupcake"]
+      }
     }
   },
 
   content: {
+    documentDriven: true,
     highlight: {
       theme: {
-        // Default theme (same as single string)
         default: 'github-light',
-        // Theme used if `html.dark`
-        dark: 'github-dark'
+        dark: 'github-dark',
       }
     }
   }

@@ -3,6 +3,7 @@ title: Hello Content v2!
 description: The writing experience for Nuxt 3
 category: announcement
 tags: hello world
+# layout: article
 ---
 
 > 当然可以。这是一篇简短的文章，它包含了许多常用的Markdown语法。

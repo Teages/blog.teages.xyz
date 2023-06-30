@@ -46,7 +46,7 @@ const { copy, copied, isSupported } = useClipboard()
       </span>
     </div>
     <div class="code-block border border-gray-400 rounded-md not-prose text-base relative">
-      <div class="pt-2 w-16 absolute top-0 left-0 bottom-0 select-none opacity-80">
+      <div class="pt-2 w-16 absolute top-0 left-0 bottom-0 select-none">
         <div v-for="line of codeLines" :class="'text-center' + (line.highlighted ? ' highlight' : '')">
           {{ line.num }}
         </div>
@@ -65,7 +65,7 @@ const { copy, copied, isSupported } = useClipboard()
 
 <style>
 .code-block .highlight{
-  @apply bg-red-100 block;
+  @apply bg-red-100 block dark:bg-red-900/40;
 }
 
 .code-block pre {
