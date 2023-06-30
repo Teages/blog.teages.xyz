@@ -16,7 +16,8 @@
         </ul>
         <div class="join">
           <button @click="toggleDark()" class="btn btn-square btn-ghost join-item">
-            <Icon name="mdi:theme-light-dark" size="24" />
+            <Icon v-if="colorMode.value == 'dark'" name="material-symbols:light-mode" size="24" />
+            <Icon v-else name="material-symbols:dark-mode" size="24" />
           </button>
           <NuxtLink to="https://github.com/Teages/blog.teages.xyz" target="_blank" class="btn btn-square btn-ghost join-item">
             <Icon name="mdi:github" size="24" />

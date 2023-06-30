@@ -13,3 +13,12 @@
 .prose :where(blockquote):not(:where([class~="not-prose"] *)) {
   @apply not-italic;
 }
+
+.prose :where(blockquote p:first-of-type):not(:where([class~="not-prose"] *))::before,
+.prose :where(blockquote p:first-of-type):not(:where([class~="not-prose"] *))::after {
+  content: ''
+}
+
+.prose :where(blockquote p:first-of-type):not(:where([class~="not-prose"] *)) {
+  @apply opacity-80
+}

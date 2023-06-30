@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen items-center mx-auto overflow-auto">
+  <div class="min-h-screen items-center flex flex-col mx-auto overflow-auto">
     <div class="w-full z-10 fixed top-0">
       <NavBar />
     </div>
