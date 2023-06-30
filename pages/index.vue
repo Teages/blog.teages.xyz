@@ -1,5 +1,5 @@
 <template>
   <main>
-    <ContentDoc />
+    Hello World
   </main>
 </template>

@@ -8,8 +8,15 @@
   },
   "devDependencies": {
     "@nuxt/content": "^2.6.0",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^18.15.12",
-    "nuxt": "^3.5.2"
+    "daisyui": "latest",
+    "nuxt": "^3.5.2",
+    "nuxt-icon": "^0.4.2"
   },
-  "packageManager": "yarn@3.6.0"
+  "packageManager": "yarn@3.6.0",
+  "dependencies": {
+    "@vueuse/nuxt": "^10.2.1"
+  }
 }
