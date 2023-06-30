@@ -13,3 +13,13 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+useHead({
+  titleTemplate: (titleChunk) => {
+    const siteTitle = 'Teages\'s Blog';
+    const siteSubTitle = 'Teages 的个人博客';
+    return titleChunk ? `${titleChunk} - ${siteTitle}` : `${siteSubTitle} | ${siteTitle}`;
+  }
+})
+</script>

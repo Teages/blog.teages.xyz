@@ -2,8 +2,10 @@
   <div class="navbar bg-base-100/30 max-w-4xl mx-auto backdrop-blur">
     <div class="dropdown dropdown-start">
       <label tabindex="0" class="btn btn-ghost normal-case text-xl">
-        <Icon name="mdi:square-rounded-outline" size="32" />
-        Teages
+        <Icon name="mdi:square-rounded-outline" size="28" />
+        <span>
+          Teages
+        </span>
       </label>
       <div tabindex="0" class="mt-3 z-10 p-2 shadow dropdown-content bg-base-100 rounded-box">
         <ul class="menu px-1 block sm:hidden">
@@ -27,7 +29,11 @@
       </div>
     </div>
 
-    <div class="flex-1"></div>
+    <div class="flex-1">
+      <span v-if="title" class="text-lg opacity-80 p-2 pt-3">
+        {{ title }}
+      </span>
+    </div>
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
         <li v-for="link in links" class="hidden sm:inline">
@@ -42,6 +48,10 @@
 </template>
 
 <script setup lang="ts">
+
+const content = useContent()
+const title : Ref<string|null> = computed(() => content.page.value?.title)
+
 const colorMode = useColorMode()
 
 const links = [
