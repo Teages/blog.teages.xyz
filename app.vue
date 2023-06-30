@@ -13,20 +13,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-const isDark = useDark()
-
-watch(isDark, async (newMode) => {
-  updateDaisyTheme(newMode)
-})
-updateDaisyTheme(isDark.value)
-
-function updateDaisyTheme(dark:boolean) {
-  useHead({
-    htmlAttrs: {
-      'data-theme': dark ? 'dark' : 'light'
-    }
-  })
-}
-</script>

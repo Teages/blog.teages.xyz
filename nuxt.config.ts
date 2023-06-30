@@ -4,7 +4,14 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
     '@vueuse/nuxt',
+    '@nuxtjs/color-mode',
   ],
+
+  colorMode: {
+    classSuffix: '',
+    preference: 'system',
+    dataValue: 'theme',
+  },
 
   tailwindcss:{
     config: {
