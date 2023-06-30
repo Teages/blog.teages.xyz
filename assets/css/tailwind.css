@@ -10,6 +10,10 @@
   @apply no-underline;
 }
 
+.prose :where(h2, h3, h4):not(:where([class~="not-prose"] *)) {
+  @apply scroll-mt-20;
+}
+
 .prose :where(blockquote):not(:where([class~="not-prose"] *)) {
   @apply not-italic;
 }

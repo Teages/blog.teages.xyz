@@ -2,9 +2,9 @@
   <div class="navbar bg-base-100/30 max-w-4xl mx-auto">
     <div class="dropdown dropdown-start">
       <label tabindex="0" class="btn btn-ghost normal-case text-xl">
-        <Icon name="mdi:square-rounded-outline" size="28" />
+        <!-- <Icon name="mdi:square-rounded-outline" size="28" /> -->
         <span>
-          Teages
+          Teages's Blog
         </span>
       </label>
       <div tabindex="0" class="mt-3 z-10 p-2 shadow dropdown-content bg-base-100 rounded-box">
