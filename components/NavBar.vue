@@ -50,7 +50,8 @@
 <script setup lang="ts">
 
 const content = useContent()
-const title : Ref<string|null> = computed(() => content.page.value?.title)
+const meta = useContentMeta(content)
+const title : Ref<string|undefined> = computed(() => meta?.title)
 
 const colorMode = useColorMode()
 

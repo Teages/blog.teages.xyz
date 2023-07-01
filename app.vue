@@ -15,14 +15,39 @@
 </template>
 
 <script setup lang="ts">
+const content = useContent()
+const meta = useContentMeta(content)
+console.warn(meta)
 useHead({
   titleTemplate: (titleChunk) => {
     const siteTitle = 'Teages\'s Blog';
-    const siteSubTitle = 'Teages 的个人博客';
+    const siteSubTitle = 'Teages 的博客';
     return titleChunk ? `${titleChunk} - ${siteTitle}` : `${siteSubTitle} | ${siteTitle}`;
   },
   htmlAttrs: {
     lang: 'zh-CN',
   },
+  meta: (meta ? [
+    {
+      name: 'description',
+      content: meta?.description,
+    },
+    {
+      name: 'keywords',
+      content: meta?.tags.join(', '),
+    },
+    (meta?.coverImage ?{
+      name: 'og:image',
+      content: meta?.coverImage,
+    }:{}),
+    {
+      name: 'author',
+      content: 'Teages',
+    },
+    {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1'
+    }
+  ] : undefined)
 })
 </script>
