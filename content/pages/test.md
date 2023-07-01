@@ -1,9 +1,24 @@
 ---
 title: Hello Content v2!
+date: 2023/6/30
 description: The writing experience for Nuxt 3
-category: announcement
-tags: hello world
-# layout: article
+
+# Tags string[]
+tags: [hello world, new bing]
+
+# 类别 string
+category: test
+
+# 置顶 bool / number
+top: false # 越大越靠前
+# 公告 (预览展示全文) bool
+announcement: false
+
+# 生成目录 (插入到 h1 正下方) bool
+toc: true
+
+# 评论
+comment: false
 ---
 
 > 当然可以。这是一篇简短的文章，它包含了许多常用的Markdown语法。

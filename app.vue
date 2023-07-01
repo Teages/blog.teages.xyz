@@ -20,6 +20,9 @@ useHead({
     const siteTitle = 'Teages\'s Blog';
     const siteSubTitle = 'Teages 的个人博客';
     return titleChunk ? `${titleChunk} - ${siteTitle}` : `${siteSubTitle} | ${siteTitle}`;
-  }
+  },
+  htmlAttrs: {
+    lang: 'zh-CN',
+  },
 })
 </script>
