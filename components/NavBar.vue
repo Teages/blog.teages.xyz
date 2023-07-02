@@ -25,15 +25,17 @@
             <Icon name="mdi:github" size="24" />
           </NuxtLink>
         </div>
-
       </div>
     </div>
 
-    <div class="flex-1">
+    <div class="flex-1 sm:hidden" />
+
+    <div class="sm:flex-1">
       <span v-if="title" class="text-lg opacity-80 p-2 pt-3">
         {{ title }}
       </span>
     </div>
+
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
         <li v-for="link in links" class="hidden sm:inline">
@@ -58,7 +60,7 @@ const colorMode = useColorMode()
 const links = [
   addLink('主页', '/', 'material-symbols:home-outline'),
   addLink('帖子', '/', 'material-symbols:article-outline-rounded'),
-  addLink('关于', '/', 'material-symbols:info-outline-rounded'),
+  addLink('关于', '/about', 'material-symbols:info-outline-rounded'),
 ]
 
 function toggleDark() {

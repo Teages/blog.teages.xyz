@@ -27,7 +27,9 @@ export default defineNuxtConfig({
   },
 
   content: {
-    documentDriven: true,
+    documentDriven: {
+      injectPage: false,
+    },
     highlight: {
       theme: {
         default: 'github-light',

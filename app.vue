@@ -3,9 +3,11 @@
     <div class="w-full z-10 fixed top-0 backdrop-blur">
       <NavBar />
     </div>
-    <div class="pt-16 flex-1 w-full">
-      <div class="py-2 px-4 lg:px-12">
-        <NuxtPage />
+    <div class="pt-20 pb-4 px-4 flex-1 w-full">
+      <div class="lg:px-12">
+        <main class="prose lg:prose-xl mx-auto">
+          <NuxtPage />
+        </main>
       </div>
     </div>
     <div class="w-full">
@@ -17,7 +19,7 @@
 <script setup lang="ts">
 const content = useContent()
 const meta = useContentMeta(content)
-console.warn(meta)
+
 useHead({
   titleTemplate: (titleChunk) => {
     const siteTitle = 'Teages\'s Blog';
@@ -30,15 +32,15 @@ useHead({
   meta: (meta ? [
     {
       name: 'description',
-      content: meta?.description,
+      content: meta.value?.description,
     },
     {
       name: 'keywords',
-      content: meta?.tags.join(', '),
+      content: meta.value?.tags.join(', '),
     },
-    (meta?.coverImage ?{
+    (meta.value?.coverImage ?{
       name: 'og:image',
-      content: meta?.coverImage,
+      content: meta.value?.coverImage,
     }:{}),
     {
       name: 'author',

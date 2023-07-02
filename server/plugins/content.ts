@@ -4,14 +4,12 @@ import { visit } from 'unist-util-visit'
 export default defineNitroPlugin((nitroApp) => {
   // @ts-ignore
   nitroApp.hooks.hook('content:file:afterParse', (file: any) => {
-    console.log('ddddd')
     if (file._id.endsWith('.md')) {
       // metadata
       let title : string = file.title ?? (() => {
         let title : string = ''
         visit(
           file.body, (n:any) => n.tag === 'h1', (node) => {
-            console.log(node.children[0].value)
             title = node.children[0].value
           }
         )
@@ -34,12 +32,20 @@ export default defineNitroPlugin((nitroApp) => {
         let coverImage : string | null = null
         visit(
           file.body, (n:any) => n.tag === 'img', (node) => {
-            console.log(node.props.src)
             coverImage = node.props.src
+            return false
           }
         )
         return coverImage
       })()
+
+      // Hide first h1
+      visit(file.body, (n:any) => n.tag === 'h1', (node) => {
+        if (node.children[0].value === title) {
+          node.props.style = 'display: none;'
+        }
+        return false
+      })
 
       // write back
       file.title = title

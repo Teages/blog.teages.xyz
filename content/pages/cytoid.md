@@ -5,6 +5,7 @@ Author: Teages
 tags: [Cytoid , CC BY NC 4.0, 失效]
 comments: true
 toc: true
+next: /pages/test.md
 ---
 
 <!--[POST]-->
