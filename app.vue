@@ -29,27 +29,11 @@ useHead({
   htmlAttrs: {
     lang: 'zh-CN',
   },
-  meta: (meta ? [
-    {
-      name: 'description',
-      content: meta.value?.description,
-    },
-    {
-      name: 'keywords',
-      content: meta.value?.tags.join(', '),
-    },
-    (meta.value?.coverImage ?{
-      name: 'og:image',
-      content: meta.value?.coverImage,
-    }:{}),
-    {
-      name: 'author',
-      content: 'Teages',
-    },
+  meta: [
     {
       name: 'viewport',
       content: 'width=device-width, initial-scale=1'
     }
-  ] : undefined)
+  ]
 })
 </script>
