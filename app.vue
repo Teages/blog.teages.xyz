@@ -3,7 +3,7 @@
     <div class="w-full z-10 fixed top-0 backdrop-blur">
       <NavBar />
     </div>
-    <div class="pt-20 pb-4 px-4 flex-1 w-full">
+    <div class="pt-32 pb-4 px-4 flex-1 w-full">
       <div class="lg:px-12">
         <main class="prose lg:prose-xl mx-auto">
           <NuxtPage />
@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 const content = useContent()
-const meta = useContentMeta(content)
+const route = useRoute()
 
 useHead({
   titleTemplate: (titleChunk) => {
@@ -33,6 +33,10 @@ useHead({
     {
       name: 'viewport',
       content: 'width=device-width, initial-scale=1'
+    },
+    {
+      name: 'giscus:backlink',
+      content: `https://blog.teages.xyz${route.path}`
     }
   ]
 })

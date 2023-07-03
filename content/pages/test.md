@@ -1,7 +1,7 @@
 ---
-title: Hello Content v2!
+title: Markdown 测试
 date: 2023/6/30
-description: The writing experience for Nuxt 3
+description: 测试 Markdown 样式支持
 author: New Bing
 
 # Tags string[]
@@ -19,9 +19,12 @@ announcement: false
 showToc: true
 
 # 评论
-comment: false
+comment: true
 ---
-> 当然可以。这是一篇简短的文章，它包含了许多常用的Markdown语法。
+# Markdown 测试
+<!-- 上面的标题应该被自动隐藏 (标题提前) -->
+
+> bing: 当然可以。这是一篇简短的文章，它包含了许多常用的Markdown语法。
 # 一级标题
 
 文本

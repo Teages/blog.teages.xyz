@@ -1,8 +1,21 @@
 <template>
-  <img v-if="meta?.coverImage" :src="meta?.coverImage">
-  <h1 v-if="meta?.title">{{ meta?.title }}</h1>
-  <Toc v-if="toc" :toc="toc" />
+  <template v-if="meta">
+    <img v-if="meta.coverImage" :src="meta?.coverImage">
+    <h1 style="margin-bottom: 1.5rem;" v-if="meta.title">{{ meta?.title }}</h1>
+    <div v-if="meta.category || (meta?.tags && meta.tags.length > 0)" class="flex gap-2 mb-8">
+      <NuxtLink to="https://baidu.com">
+        <div v-if="meta.category" class="badge badge-lg badge-primary badge-outline"> {{ meta.category }} </div>
+      </NuxtLink>
+      <template v-if="meta.tags">
+        <NuxtLink v-for="tag in meta.tags" to="https://baidu.com">
+          <div class="badge badge-lg badge-outline"> {{ tag }} </div>
+        </NuxtLink>
+      </template>
+    </div>
+    <Toc v-if="meta.showToc && toc" :toc="toc" />
+  </template>
   <ContentRenderer :key="page._id" :value="page" />
+  <Comments v-if="meta?.comment" />
 </template>
 
 <script setup lang="ts">
@@ -23,7 +36,7 @@ if (meta?.value != null) {
 const { y: windowY } = useWindowScroll()
 watch(windowY, (y) => {
   if (process.client) {
-    const offset = 80
+    const offset = 128
     const anchors = document.querySelectorAll('h1[id], h2[id], h3[id], h4[id]')
     const activeAnchor = Array.from(anchors).find((anchor) => {
       const anchorTop = anchor.getBoundingClientRect().top + window.scrollY - offset

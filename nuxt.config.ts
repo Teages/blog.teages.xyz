@@ -36,6 +36,12 @@ export default defineNuxtConfig({
         dark: 'github-dark',
       }
     }
-  }
+  },
+
+  routeRules: {
+    '/public/giscus/**': {
+      cors: true,
+    },
+  },
 
 })

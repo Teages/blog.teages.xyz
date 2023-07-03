@@ -16,7 +16,7 @@
             </NuxtLink>
           </li>
         </ul>
-        <div class="join">
+        <div class="join px-1">
           <ClientOnly>
             <button @click="toggleDark()" class="btn btn-square btn-ghost join-item">
               <Icon v-if="isDark" name="material-symbols:light-mode" size="24" />
