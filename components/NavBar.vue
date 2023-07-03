@@ -17,10 +17,12 @@
           </li>
         </ul>
         <div class="join">
-          <button @click="toggleDark()" class="btn btn-square btn-ghost join-item">
-            <Icon v-if="colorMode.value == 'dark'" name="material-symbols:light-mode" size="24" />
-            <Icon v-else name="material-symbols:dark-mode" size="24" />
-          </button>
+          <ClientOnly>
+            <button @click="toggleDark()" class="btn btn-square btn-ghost join-item">
+              <Icon v-if="isDark" name="material-symbols:light-mode" size="24" />
+              <Icon v-else name="material-symbols:dark-mode" size="24" />
+            </button>
+          </ClientOnly>
           <NuxtLink to="https://github.com/Teages/blog.teages.xyz" target="_blank" class="btn btn-square btn-ghost join-item">
             <Icon name="mdi:github" size="24" />
           </NuxtLink>
@@ -53,9 +55,10 @@
 
 const content = useContent()
 const meta = useContentMeta(content)
-const title : Ref<string|undefined> = computed(() => meta?.title)
+const title = computed(() => meta?.value?.title)
 
 const colorMode = useColorMode()
+const isDark = computed(() => colorMode.value === 'dark')
 
 const links = [
   addLink('主页', '/', 'material-symbols:home-outline'),
@@ -65,10 +68,12 @@ const links = [
 
 function toggleDark() {
   const system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+  console.log('before', system, colorMode.value, colorMode.preference)
+  colorMode.preference = isDark.value ? 'light' : 'dark'
   if (colorMode.preference === system) {
     colorMode.preference = 'system'
   }
+  console.log('after', system, colorMode.value, colorMode.preference)
 }
 
 function addLink(name: string, path: string, icon: string) {

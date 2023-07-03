@@ -10,15 +10,16 @@ const content = useContent()
 const { page, toc } = content
 const meta = useContentMeta(content)
 
-useSeoMeta({
-  title: meta?.value?.title,
-  ogTitle: meta?.value?.title,
-  description: meta?.value?.description,
-  keywords: meta?.value?.tags.join(', '),
-  ogImage: meta?.value?.coverImage,
-  author: 'Teages',
-})
-
+if (meta?.value != null) {
+  useSeoMeta({
+    title: meta.value.title,
+    ogTitle: meta.value.title,
+    description: meta.value.description,
+    keywords: meta.value.tags.join(', '),
+    ogImage: meta.value.coverImage,
+    author: 'Teages',
+  })
+}
 const { y: windowY } = useWindowScroll()
 watch(windowY, (y) => {
   if (process.client) {
