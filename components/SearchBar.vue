@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="join w-full">
-    <input v-model.trim="search" @blur="updateAll(false)" class="input input-primary input-bordered join-item flex-1"
+    <input v-model.trim="search" @blur="updateAll(false)" @keypress.enter="updateAll(true)" class="input input-primary input-bordered join-item flex-1"
       placeholder="搜索帖子..." />
     <div v-if="!autoUpdate" class="indicator">
       <button @click="updateAll(true)" class="btn btn-primary w-24 join-item">

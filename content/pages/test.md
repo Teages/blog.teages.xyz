@@ -5,7 +5,7 @@ description: 测试 Markdown 样式支持
 author: New Bing
 
 # Tags string[]
-tags: [hello world, new bing]
+tags: [hello, new_bing]
 
 # 类别 string
 category: test

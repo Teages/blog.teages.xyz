@@ -52,8 +52,10 @@ export default defineNitroPlugin((nitroApp) => {
       file.date = date
       file.description = description
       file.tags = tags
+      file.tags_query = tags.map((item) => item.toLowerCase())
       file.author = author
       file.category = category
+      file.category_query = category?.toLowerCase()
       file.top = top
       file.announcement = announcement
       file.showToc = showToc

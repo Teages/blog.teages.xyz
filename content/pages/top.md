@@ -6,6 +6,7 @@ tags: []
 comments: true
 toc: false
 pinned: true
+category: test2
 ---
 
 欢迎访问本博客!
