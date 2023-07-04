@@ -3,25 +3,33 @@
     <img v-if="meta.coverImage" :src="meta?.coverImage">
     <h1 style="margin-bottom: 1.5rem;" v-if="meta.title">{{ meta?.title }}</h1>
     <div v-if="meta.category || (meta?.tags && meta.tags.length > 0)" class="flex gap-2 mb-8">
-      <NuxtLink to="https://baidu.com">
+      <NuxtLink :to="{ path:'/pages' , query: { category: meta.category?.toLocaleLowerCase() } }">
         <div v-if="meta.category" class="badge badge-lg badge-primary badge-outline"> {{ meta.category }} </div>
       </NuxtLink>
       <template v-if="meta.tags">
-        <NuxtLink v-for="tag in meta.tags" to="https://baidu.com">
+        <NuxtLink v-for="tag in meta.tags" :to="{ path:'/pages' , query: { tags: [tag.toLocaleLowerCase()] } }">
           <div class="badge badge-lg badge-outline"> {{ tag }} </div>
         </NuxtLink>
       </template>
     </div>
     <Toc v-if="meta.showToc && toc" :toc="toc" />
   </template>
-  <ContentRenderer :key="page._id" :value="page" />
-  <Comments v-if="meta?.comment" />
+  <ContentRenderer v-if="page" :key="page._id" :value="page" />
+  <Comments :key="page._id" v-if="meta?.comment" />
 </template>
 
 <script setup lang="ts">
+const route = useRoute()
 const content = useContent()
 const { page, toc } = content
 const meta = useContentMeta(content)
+
+if (!page.value?._id) {
+  showError({
+    statusCode: 404,
+    message: `文章不存在: ${route.path}`,
+  })
+}
 
 if (meta?.value != null) {
   useSeoMeta({

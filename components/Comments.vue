@@ -42,6 +42,7 @@ function updateTheme() {
   <ClientOnly>
     <Giscus
       ref="giscusDom"
+      class="select-none"
       repo="Teages/blog.teages.xyz" repo-id="MDEwOlJlcG9zaXRvcnkzNTY2NjAzMTg="
       category="Comments" category-id="DIC_kwDOFUI0Xs4CXp36"
       mapping="pathname"

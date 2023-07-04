@@ -2,6 +2,7 @@
   - [ ] TimeLine
     - [ ] 文章
     - [ ] (自动更新) (?)
+    - [ ] Anime
     - [ ] Cytoid
     - [ ] osu!
     - [ ] Bilibili

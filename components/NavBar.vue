@@ -62,7 +62,7 @@ const isDark = computed(() => colorMode.value === 'dark')
 
 const links = [
   addLink('主页', '/', 'material-symbols:home-outline'),
-  addLink('帖子', '/', 'material-symbols:article-outline-rounded'),
+  addLink('帖子', '/pages', 'material-symbols:article-outline-rounded'),
   addLink('关于', '/about', 'material-symbols:info-outline-rounded'),
 ]
 

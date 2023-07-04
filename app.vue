@@ -7,6 +7,7 @@
       <div class="lg:px-12">
         <main class="prose lg:prose-xl mx-auto">
           <NuxtPage />
+          <slot />
         </main>
       </div>
     </div>
