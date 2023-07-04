@@ -71,7 +71,7 @@ const query = computed<{
     if (tag && tag.length > 0) {
       query.tag = tag.join(',')
     }
-    router.push({
+    router.replace({
       query
     })
   }
@@ -84,6 +84,9 @@ watch(query, async () => {
 })
 
 async function updateResult() {
+  useHeadSafe({
+    title: query.value.search ? `搜索帖子: ${query.value.search}` : '帖子列表',
+  })
   let querier = queryContent('/pages')
   if (query.value.query.category.length > 0) {
     querier = querier.where({
@@ -106,12 +109,11 @@ async function updateResult() {
       const articleStr = JSON.stringify(article).toLowerCase()
       if (keywords.every((keyword) => articleStr.includes(keyword))) {
         return article
-      } else {
-        return null
       }
-    }).filter((item) => item !== null)
+    }).filter((item) => item !== undefined) as ParsedContent[]
   }
   return ans
 }
+
 
 </script>
